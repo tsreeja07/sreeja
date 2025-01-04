@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .content {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        h1 {
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to a Random Page!</h1>
+        <p id="quote">Loading a random quote...</p>
+    </div>
+
+    <script>
+        // Random quotes array
+        const quotes = [
+            "The only limit to our realization of tomorrow is our doubts of today.",
+            "Life is 10% what happens to us and 90% how we react to it.",
+            "The future belongs to those who believe in the beauty of their dreams.",
+            "Do not go where the path may lead, go instead where there is no path and leave a trail.",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts."
+        ];
+
+        // Random colors array
+        const colors = [
+            '#FF6347', '#8A2BE2', '#7FFF00', '#00BFFF', '#FFD700',
+            '#FF4500', '#ADFF2F', '#D2691E', '#DC143C', '#00FFFF'
+        ];
+
+        // Function to get random quote
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            return quotes[randomIndex];
+        }
+
+        // Function to get random color
+        function getRandomColor() {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            return colors[randomIndex];
+        }
+
+        // Set random background color
+        document.body.style.backgroundColor = getRandomColor();
+
+        // Set random quote in the <p> element
+        document.getElementById('quote').textContent = getRandomQuote();
+    </script>
+</body>
+</html>
